@@ -1,0 +1,44 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+Projects
+{% endblock %}
+
+{% block content %}
+<section class="position-relative bg-dark pt-7 pb-5 pb-md-7 bg-size-cover bg-attachment-fixed" style="background-image: url(img/demo/web-studio/cubes-bg.jpg);">
+    <div class="shape shape-bottom shape-curve bg-body">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+            <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+        </svg>
+    </div>
+    <div class="container position-relative zindex-5 text-center pt-md-6 pt-lg-7 py-5 my-lg-3">
+        <h1 class="text-light mb-0">List of Games</h1>
+    </div>
+</section>
+<!-- Portfolio grid-->
+<section class="container overflow-hidden py-5 py-md-6 py-lg-7">
+    <div class="masonry-filterable pt-3 pt-md-0">
+        <ul class="masonry-filters nav nav-tabs justify-content-center pb-4">
+            <li class="nav-item"><a class="nav-link active" href="#" data-group="all">All</a></li>
+            {% for tag in tags %}
+                <li class="nav-item"><a class="nav-link" href="#" data-group="{{ tag.pk }}">{{ tag.name }}</a></li>
+            {% endfor %}
+        </ul>
+
+            <div class="masonry-grid" data-columns="3">
+            {% for game in object_list %}
+                <div class="masonry-grid-item" data-groups="[&quot;{% for tag in game.tags.all %}{{ tag.pk }},{% endfor %}&quot;]"><a class="card card-hover border-0 shadow" href="{{ game.get_absolute_url }}"><img class="card-img-top" src="{{ game.main_img.img.url }}" alt="img">
+                    <div class="card-body text-center">
+                        <h3 class="h5 nav-heading mb-2">{{ game.name }}</h3>
+{#                        <p class="fs-sm text-muted mb-2">{{ game.short_desc }}</p>#}
+                    </div></a>
+                </div>
+            {% endfor %}
+            </div>
+
+    </div>
+</section>
+
+<script src="/static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/static/vendor/shufflejs/dist/shuffle.min.js"></script>
+{% endblock %}

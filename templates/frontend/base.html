@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="{% block desc %}{% endblock %}">
+    <meta name="keywords" content="blockchain, crypto, gamefi, game, games">
+    <meta name="author" content="">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="/static/icons/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all .4s .2s ease-in-out;
+            transition: all .4s .2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+        .page-loading.active > .page-loading-inner {
+            opacity: 1;
+        }
+        .page-loading-inner > span {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #737491;
+        }
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: .75rem;
+            vertical-align: text-bottom;
+            border: .15em solid #766df4;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner .75s linear infinite;
+            animation: spinner .75s linear infinite;
+        }
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        .nav-item {
+            margin: 0 20px;
+        }
+        .view-project:hover {
+            background-color: #1565C0;
+        }
+
+    </style>
+    {% block css %}
+    {% endblock %}
+    <!-- Page loading scripts-->
+    <script>
+        (function () {
+            window.onload = function () {
+                var preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function () {
+                    preloader.remove();
+                }, 2000);
+            };
+        })();
+
+    </script>
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="/static/vendor/simplebar/dist/simplebar.min.css"/>
+    <link rel="stylesheet" media="screen" href="/static/vendor/tiny-slider/dist/tiny-slider.css"/>
+    <link rel="stylesheet" media="screen" href="/static/vendor/lightgallery.js/dist/css/lightgallery.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="/static/css/theme.min.css">
+</head>
+<!-- Body-->
+<body class="is-sidebar">
+<!-- Page loading spinner-->
+<div class="page-loading active">
+    <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+    </div>
+</div>
+<main class="page-wrapper">
+    <!-- Sign in modal -->
+    {% include 'frontend/components/sign-in-modal.html' %}
+    <!-- Navbar -->
+    {% include 'frontend/components/navbar.html' %}
+    <!-- Page content-->
+    <!-- Hero-->
+    <div class="container">
+{#    {% block breadcrumb %}#}
+{#        <nav aria-label="breadcrumb">#}
+{#            <ol class="py-1 my-2 breadcrumb">#}
+{#                <li class="breadcrumb-item"><a href="index.html">Home</a></li>#}
+{#                <li class="breadcrumb-item"><a href="#">Blog</a>#}
+{#                </li>#}
+{#                <li class="breadcrumb-item active" aria-current="page">Grid right sidebar</li>#}
+{#            </ol>#}
+{#        </nav>#}
+{#    {% endblock %}#}
+    </div>
+    {% block content %}{% endblock %}
+</main>
+<!-- Footer-->
+{% include 'frontend/components/footer.html' %}
+<!-- Sidebar toggle button-->
+<button class="btn btn-primary btn-sm sidebar-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#blog-sidebar"><i class="ai-filter fs-base me-2"></i>Filters</button>
+<!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll data-fixed-element><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon ai-arrow-up">   </i></a>
+<!-- Vendor scrits: js libraries and plugins-->
+<script src="/static/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/vendor/simplebar/dist/simplebar.min.js"></script>
+<script src="/static/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="/static/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+<script src="/static/vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+<script src="/static/vendor/lg-video.js/dist/lg-video.min.js"></script>
+<script src="/static/vendor/parallax-js/dist/parallax.min.js"></script>
+<script src="/static/jquery/jquery.min.js"></script>
+<!-- Main theme script-->
+<script src="/static/js/theme.min.js"></script>
+
+<script>
+    function loginSubmit() {
+        const formData = new FormData($('#login-form')[0])
+        console.log($)
+        $.ajax({
+            url: '{% url 'user:login' %}',
+            data: formData,
+            contentType: false,
+            processData: false,
+            method: 'post',
+            success (res) {
+                if (res.code !== 0) {
+                    const msg = `
+                    <div class="alert alert-warning" role="alert">
+                      ${res.msg}
+                    </div>
+                    `
+                    const loginFormMsg = $('#login-form-msg')
+                    loginFormMsg.html('')
+                    loginFormMsg.append(msg)
+                } else {
+                    window.location.reload()
+                }
+            },
+            error (res) {
+                console.log('error')
+            }
+        })
+        return false
+    }
+    function registerSubmit(obj) {
+        const form = $(obj)
+        const formData = new FormData(form[0])
+        $.ajax({
+            url: '{% url 'user:register' %}',
+            method: 'post',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success (res) {
+                console.log(res)
+                if (res.code !== 0) {
+                    const msg = `
+                    <div class="alert alert-warning" role="alert">
+                      ${res.msg}
+                    </div>
+                    `
+                    const registerFormMsg = $('#register-form-msg')
+                    registerFormMsg.html('')
+                    registerFormMsg.append(msg)
+                    $('a[data-view="#modal-signin-view"]').click()
+                }
+            },
+            error (res) {
+                console.log(res)
+            }
+        })
+    }
+</script>
+
+</body>
+</html>

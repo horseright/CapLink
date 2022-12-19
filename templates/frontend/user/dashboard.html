@@ -1,0 +1,99 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block breadcrumb %}
+    <nav aria-label="breadcrumb">
+        <ol class="py-1 my-2 breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+    </nav>
+{% endblock %}
+
+{% block content %}
+{#{% include 'frontend/components/sidebar.html' %}#}
+<!-- Page content-->
+<!-- Slanted background-->
+<div class="position-relative bg-gradient" style="height: 480px;">
+    <div class="shape shape-bottom shape-slant bg-secondary d-none d-lg-block">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 260">
+            <polygon fill="currentColor" points="0,257 0,260 3000,260 3000,0"></polygon>
+        </svg>
+    </div>
+</div>
+<!-- Page content-->
+<div class="container position-relative zindex-5 pb-4 mb-md-3" style="margin-top: -350px;">
+    <div class="row">
+        <!-- Sidebar-->
+        {% include 'frontend/components/sidebar.html' %}
+        <!-- Content-->
+        <div class="col-lg-8">
+            <div class="d-flex flex-column h-100 bg-light rounded-3 shadow-lg p-4">
+                <div class="pt-2 p-md-3">
+                    <!-- Title-->
+                    <h1 class="h3 mb-3 pb-2 text-center text-sm-start">Dashboard</h1>
+                    <!-- Stats-->
+                    <div class="row mx-n2 py-2">
+                        <div class="col-md-6 col-sm-6 px-2 mb-3">
+                            <div class="bg-secondary h-100 rounded-3 p-4 text-center">
+                                <h3 class="fs-sm fw-medium text-body">Cash Balance</h3>
+                                <p class="h2 mb-2">$00.00</p>
+                                <p class="fs-ms text-muted mb-0">As of today</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 px-2 mb-3">
+                            <div class="bg-secondary h-100 rounded-3 p-4 text-center">
+                                <h3 class="fs-sm fw-medium text-body">Crypto Balance</h3>
+                                <p class="h2 mb-2">$00.00</p>
+                                <p class="fs-ms text-muted mb-0">As of today</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Orders -->
+                    <div class="row mx-n2 pt-2">
+                        <div class="col-md-12 px-2">
+                            <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class=" pb-3 mb-3 border-bottom" style="">NFTs </h5>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+{#                                            <tr>#}
+{#                                                <th>Order Number</th>#}
+{#                                                <th>Service Product</th>#}
+{#                                                <th>Mining Pool</th>#}
+{#                                                <th>Residual Time</th>#}
+{#                                                <th>Accumulated Output</th>#}
+{#                                                <th>Current Status</th>#}
+{#                                                <th>Next Operation</th>#}
+{#                                            </tr>#}
+                                        </thead>
+                                        <tbody>
+{#                                            {% for order in request.user.order_set.all %}#}
+{#                                                <tr>#}
+{#                                                    <td>{{ order.order_id }}</td>#}
+{#                                                    <td>{{ order.service_product }}</td>#}
+{#                                                    <td>{{ order.pool }}</td>#}
+{#                                                    <td></td>#}
+{#                                                    <td>{{ order.output }}</td>#}
+{#                                                    <td>{{ order.status }}</td>#}
+{#                                                    <td><button class="btn btn-sm btn-primary">View more</button></td>#}
+{#                                                </tr>#}
+{#                                            {% endfor %}#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

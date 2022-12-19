@@ -1,0 +1,86 @@
+{% extends 'frontend/base.html' %}
+{% load markdown %}
+
+{% block title %}
+{{ object.name }}
+{% endblock %}
+
+{% block css %}
+<style>
+    .product-table {
+        background-color: #f7f7f7;
+    }
+</style>
+{% endblock %}
+
+{% block breadcrumb %}
+<nav aria-label="breadcrumb">
+    <ol class="py-1 my-2 breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Games</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{ object.title }}</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block content %}
+<section class="sidebar-end border-bottom mb-5 mb-md-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 content py-4">
+                <!-- Product gallery-->
+                <div class="product-gallery">
+                    <div class="product-gallery-preview order-sm-2">
+                        <div class="product-gallery-preview-item active" id="first"><img src="{{ object.main_img.img.url }}" alt="Product preview"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product info-->
+            <div class="col-lg-3 pt-5 ps-lg-4 pb-md-2">
+                <div class="ps-lg-4 pb-5">
+                    <h2 class="mb-3 pb-4">{{ object.name }}</h2>
+                    <div class="mt-4 mb-3">
+                        {% for tag in object.tags.all %}<span class="badge bg-success" style="margin-right: 5px">{{ tag }}</span>{% endfor %} <br><br>
+                        {{ object.short_desc }}
+                    </div>
+                    <div class="mt-4 mb-3" style="margin-top: 20px">
+                        {% for action in object.action_set.all %}
+                            <a class="btn btn-primary d-block w-100" href="{{ action.url }}">{{ action.text }}</a>
+                            <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Detail</h3>
+            <hr>
+            {{ object.description|md2html|safe }}
+        </div>
+        <div class="row" style="margin-top: 30px">
+            <h3>FAQ</h3>
+            <hr>
+            <!-- Flush accordion. Use this when you need to render accordions edge-to-edge with their parent container -->
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+            {% for faq in object.faq_set.all %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading{{ faq.pk }}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ faq.pk }}" aria-expanded="false" aria-controls="collapse{{ faq.pk }}">{{ faq.question }}</button>
+                    </h2>
+                    <div class="accordion-collapse collapse" id="collapse{{ faq.pk }}" aria-labelledby="heading{{ faq.pk }}" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">{{ faq.answer }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px">
+            <h3>Disclaimers</h3>
+            <hr>
+            <p>{{ object.disclaimer|md2html|safe }}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

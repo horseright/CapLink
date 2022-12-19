@@ -1,0 +1,195 @@
+{% extends 'frontend/base.html' %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block content %}
+
+{#<section class="d-flex align-items-center position-relative bg-dark bg-size-cover bg-position-center min-vh-100 overflow-hidden pt-6 pb-lg-5" style="background-image: url(/static/img/demo/presentation/intro/bg.jpg);">#}
+{#    <div class="container-fluid pt-4 pb-5 py-lg-5">#}
+{#        <div class="row align-items-center py-3">#}
+{#            <div class="col-xl-6 col-lg-5 d-flex justify-content-end">#}
+{#                <div class="pt-2 mx-auto mb-5 mb-lg-0 ms-lg-0 me-xl-7 text-center text-lg-start" style="max-width: 495px;">#}
+{#                    <h1 class="display-4 text-light pb-2">We enrich gaming experience with native WEB3 technologies</h1>#}
+{#                    <p class="h4 fw-light text-light opacity-70 line-height-base">Free to play, own and earn</p><a class="d-inline-flex align-items-center text-decoration-none pt-2 mt-4 mb-5" href="#demos" data-scroll><span class="btn btn-icon rounded-circle border-light flex-shrink-0 px-3 view-project" style="background-color: #42A5F5"><i class="ai-arrow-down h4 text-light my-1"></i></span><span class="ms-3 text-light fw-medium">Click to Contact US</span></a>#}
+{#                    <hr class="hr-light mt-0 mb-5">#}
+{#                    <div class="row">#}
+{#                        <div class="col-sm-4 mb-4 mb-sm-0">#}
+{#                            <div class="h1 text-light mb-1">6+</div>#}
+{#                            <div class="h5 text-light fw-normal opacity-70 mb-2">Games</div><span class="badge rounded-pill bg-success">More coming</span>#}
+{#                        </div>#}
+{#                        <div class="col-sm-4 mb-4 mb-sm-0">#}
+{#                            <div class="h1 text-light mb-1">20+</div>#}
+{#                            <div class="h5 text-light fw-normal opacity-70 mb-1">Collaborators</div>#}
+{#                        </div>#}
+{#                        <div class="col-sm-4">#}
+{#                            <div class="h1 text-light mb-1">120+</div>#}
+{#                            <div class="h5 text-light fw-normal opacity-70 mb-1">Pipeline</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-xl-6 col-lg-7">#}
+{#                <div class="parallax ms-lg-n5" style="max-width: 920px;">#}
+{#                    <div class="parallax-layer position-relative" data-depth="0.1"><img src="/static/img/demo/presentation/intro/layer01.png" alt="Layer"></div>#}
+{#                    <div class="parallax-layer" style="z-index: 2;" data-depth="0.3"><img src="/static/img/demo/presentation/intro/layer02.png" alt="Layer"></div>#}
+{#                    <div class="parallax-layer" data-depth="0.2"><img src="/static/img/demo/presentation/intro/layer03.png" alt="Layer"></div>#}
+{#                    <div class="parallax-layer" style="z-index: 3;" data-depth="0.1"><img src="/static/img/demo/presentation/intro/layer04.png" alt="Layer"></div>#}
+{#                    <div class="parallax-layer" data-depth="0.15"><img src="/static/img/demo/presentation/intro/layer05.png" alt="Layer"></div>#}
+{#                    <div class="parallax-layer" style="z-index: 4;" data-depth="0.25"><img src="/static/img/demo/presentation/intro/layer06.png" alt="Layer"></div>#}
+{#                    <div class="parallax-layer" data-depth="0.3"><img src="/static/img/demo/presentation/intro/layer07.png" alt="Layer"></div>#}
+{#                    <div class="parallax-layer" data-depth="0.4"><img src="/static/img/demo/presentation/intro/layer08.png" alt="Layer"></div>#}
+{#                    <div class="parallax-layer" data-depth="0.35"><img src="/static/img/demo/presentation/intro/layer09.png" alt="Layer"></div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+
+<section class="container-fluid px-0 pb-5 pb-md-6" style="padding-bottom: 0">
+    <div class="row g-0 align-items-xl-center">
+      <div class="col-lg-6 col-md-7 text-end order-md-2 d-flex justify-content-center"><div class="col-md-7"><img class="d-inline-block" src="/static/img/demo/business-consulting/hero-img.jpg" alt="Business people" width="945"></div></div>
+      <div class="col-lg-6 col-md-5 pt-5 pb-3 py-md-5">
+        <div class="mx-auto me-md-5 me-xl-7 ps-3 py-md-3 order-md-1" style="max-width: 516px;">
+          <h1 class="mb-grid-gutter pb-1">Fast way to achieve your goals in business</h1>
+          <p class="callout d-block d-md-none d-lg-block fs-lg text-muted mb-grid-gutter">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+          <div class="pt-2"><a class="btn-video btn-video-primary btn-video-sm me-3" href="https://www.youtube.com/watch?v=hTu0a4o97dU" data-sub-html="<h6 class=&quot;fs-sm text-light&quot;>Around Consulting</h6>" lg-uid="lg0"></a><span class="fs-sm">Get to know us better</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Demos-->
+{#<section class="bg-secondary" id="demos">#}
+{#    <div class="container pt-5 pb-4 py-md-6 py-lg-7">#}
+{#        <div class="text-center mb-5 pt-3 pt-lg-4">#}
+{#            <h2 class="h1 mb-4">Games</h2>#}
+{#            <p class="text-muted">Choose from the best-in-class mining projects</p>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#            {% for project in object_list %}#}
+{#            <div class="col-lg-4 col-sm-6 mb-grid-gutter pb-3">#}
+{#                    <div class="card card-hover border-0 shadow-lg mb-4">#}
+{#                        <div class="card">#}
+{#                            <div class="card-header">#}
+{#                                <div style="font-size: 20px;font-style: normal;text-align: center;color: black;font-weight: bold">{{ project.title }}</div>#}
+{#                            </div>#}
+{#                            <div class="card-body" style="padding-top: 0">#}
+{#                                <div style="margin-top: 20px;text-align: center;font-weight: 500;font-size: 16px">#}
+{#                                    {{ project.longth }} Days#}
+{#                                </div>#}
+{#                                <div style="margin-top: 10px;text-align: center;font-weight: 500;font-size: 16px">#}
+{#                                    {{ project.hash_rate }} TH/s#}
+{#                                </div>#}
+{#                                <div style="font-size: 36px;text-align: center;margin-top: 20px">#}
+{#                                    <span style="font-size: 16px">$</span>{{ project.price }}#}
+{#                                </div>#}
+{#                                <div style="font-size: 16px;text-align: center;margin-top: 20px">#}
+{#                                    Estimated starting in {{ project.estimated_starting_hours }} hrs#}
+{#                                </div>#}
+{#                                <div style="margin-top: 30px;display: flex;justify-content: center;align-items: center">#}
+{#                                    <div class="progress" style="height: 4px;margin-bottom: 0;width: 60%">#}
+{#                                        <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>#}
+{#                                    </div>#}
+{#                                    <div style="font-size: 10px;margin-left: 5px" class="text-muted">#}
+{#                                        Sold: 45%#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div style="display: flex;margin-top: 80px">#}
+{#                                    <a class="btn btn-primary btn-block" style="margin: 0 20px;width: 100%" href="{{ project.get_absolute_url }}">#}
+{#                                        Check Details#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="footer" style="margin-top: 20px">#}
+{#                                    <div class="text-muted" style="font-size: 10px;text-align: center">#}
+{#                                        Comparative analysis#}
+{#                                    </div>#}
+{#                                    <div style="text-align: center">#}
+{#                                        <span class="text-muted" style="font-size: 10px">Service Fee</span> <span style="font-size: 10px">${{ project.service_fee }}/T/D</span>#}
+{#                                    </div>#}
+{#                                    <div style="text-align: center">#}
+{#                                        <span class="text-muted" style="font-size: 10px">Static Revenue Rate</span><span style="font-size: 10px">${{ project.static_revenue_rate }}/T/D</span>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#            </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+        <section class="container pt-5 py-md-6" style="padding-top: 0;margin-top: 0">
+        <h2 class="text-center pt-3">Our beliefs</h2>
+            <p class="d-block fs-sm text-muted text-center mx-auto pb-4 mb-5" style="max-width: 400px;"></p>
+        <div class="row">
+          <div class="col-lg-2 offset-lg-1 col-sm-3 col-6 mb-grid-gutter text-center text-sm-start"><img class="d-inline-block mb-3" src="/static/img/demo/creative-agency/services/01.svg" alt="Strategy" width="74">
+            <h3 class="h5">Great Games</h3>
+            <ul class="list-unstyled">
+              <li class="mb-0">We focus on building authentic and immersive gaming experience for gamers. We make games because we truly love them!</li>
+<!--              <li class="mb-0">Key Messaging</li>-->
+<!--              <li class="mb-0">User Personas</li>-->
+            </ul>
+          </div>
+          <div class="col-lg-2 offset-lg-1 col-sm-3 col-6 mb-grid-gutter text-center text-sm-start"><img class="d-inline-block mb-3" src="/static/img/demo/creative-agency/services/02.svg" alt="Digital" width="85">
+            <h3 class="h5">Large Community</h3>
+            <ul class="list-unstyled">
+              <li class="mb-0">The best way to make great games is to engage our gamers. We are building and collaborating with the largest and most interactive guilds in Asia</li>
+<!--              <li class="mb-0">Web/Mobile Apps</li>-->
+<!--              <li class="mb-0">Websites</li>-->
+<!--              <li class="mb-0">Design Systems</li>-->
+<!--              <li class="mb-0">Front-End</li>-->
+<!--              <li class="mb-0">Back-End</li>-->
+            </ul>
+          </div>
+          <div class="col-lg-2 offset-lg-1 col-sm-3 col-6 mb-grid-gutter text-center text-sm-start"><img class="d-inline-block mb-3" src="/static/img/demo/creative-agency/services/03.svg" alt="Visual Identity" width="78">
+            <h3 class="h5">True Ownership</h3>
+            <ul class="list-unstyled">
+              <li class="mb-0">Gamers want authentic ownership of their precious gaming assets. We are designing the best play-and-earn gameplay applying advanced blockchain technology </li>
+<!--              <li class="mb-0">Visual Identity</li>-->
+<!--              <li class="mb-0">Brand Guidelines</li>-->
+<!--              <li class="mb-0">Illustration</li>-->
+            </ul>
+          </div>
+          <div class="col-lg-2 offset-lg-1 col-sm-3 col-6 mb-grid-gutter text-center text-sm-start"><img class="d-inline-block mb-3" src="/static/img/demo/creative-agency/services/04.svg" alt="Motion" width="83">
+            <h3 class="h5">Full Ecosystem</h3>
+            <ul class="list-unstyled">
+              <li class="mb-0">The future games are interconnected with financial market. We apply our professional knowledge to build a balanced ecosystem to motivate gamers, guilds and investors</li>
+<!--              <li class="mb-0">Motion graphics</li>-->
+            </ul>
+          </div>
+        </div>
+      </section>
+{#    </div>#}
+{#</section>#}
+<!-- Mobile Interface-->
+<section class="py-5 py-md-6 py-lg-7 bg-secondary">
+    <div class="container py-3 py-lg-4">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-5 mb-md-0">
+                <div class="mx-auto mx-md-0" style="max-width: 525px;"><img class="d-block" src="/static/img/demo/presentation/mobile-screens.jpg" alt="Mobile screens"></div>
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+                <h2 class="h1 mb-4"><span class='bg-faded-primary rounded text-primary px-3 py-2'>Mobile First Strategy</span></h2>
+                <p class="text-muted mb-5">We are at the intersection of game and technology. We place first priority to mobile games and expand the possibilities of play through game experiences aiming to inspire community, connection and competition.</p>
+                <div class="d-flex align-items-center justify-content-center justify-content-md-start"><img src="/static/img/demo/presentation/qrcode.png" alt="QR Code" width="120">
+                    <div class="ps-3 ps-sm-4">
+                        <div class="text-nav text-start" style="max-width: 175px;">Scan QR code to test on your device</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-2 pt-md-0 pb-5 pb-md-6 pb-lg-7">
+    <h2 class="text-center mb-5">Trusted by Great Partners</h2>
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-6 text-center"><a class="swap-image mb-grid-gutter" href="#"><img class="swap-to" src="/static/img/demo/event-landing/partners/01_color.png" alt="Logo" width="176"><img class="swap-from" src="/static/img/demo/event-landing/partners/01_gray.png" alt="Logo" width="176"></a></div>
+      <div class="col-md-3 col-sm-4 col-6 text-center"><a class="swap-image mb-grid-gutter" href="#"><img class="swap-to" src="/static/img/demo/event-landing/partners/02_color.png" alt="Logo" width="176"><img class="swap-from" src="/static/img/demo/event-landing/partners/02_gray.png" alt="Logo" width="176"></a></div>
+      <div class="col-md-3 col-sm-4 col-6 text-center"><a class="swap-image mb-grid-gutter" href="#"><img class="swap-to" src="/static/img/demo/event-landing/partners/03_color.png" alt="Logo" width="176"><img class="swap-from" src="/static/img/demo/event-landing/partners/03_gray.png" alt="Logo" width="176"></a></div>
+      <div class="col-md-3 col-sm-4 col-6 text-center"><a class="swap-image mb-grid-gutter" href="#"><img class="swap-to" src="/static/img/demo/event-landing/partners/04_color.png" alt="Logo" width="176"><img class="swap-from" src="/static/img/demo/event-landing/partners/04_gray.png" alt="Logo" width="176"></a></div>
+      <div class="col-md-3 col-sm-4 col-6 text-center"><a class="swap-image mb-grid-gutter" href="#"><img class="swap-to" src="/static/img/demo/event-landing/partners/05_color.png" alt="Logo" width="176"><img class="swap-from" src="/static/img/demo/event-landing/partners/05_gray.png" alt="Logo" width="176"></a></div>
+      <div class="col-md-3 col-sm-4 col-6 text-center"><a class="swap-image mb-grid-gutter" href="#"><img class="swap-to" src="/static/img/demo/event-landing/partners/06_color.png" alt="Logo" width="176"><img class="swap-from" src="/static/img/demo/event-landing/partners/06_gray.png" alt="Logo" width="176"></a></div>
+      <div class="col-md-3 col-sm-4 col-6 text-center"><a class="swap-image mb-grid-gutter" href="#"><img class="swap-to" src="/static/img/demo/event-landing/partners/07_color.png" alt="Logo" width="176"><img class="swap-from" src="/static/img/demo/event-landing/partners/07_gray.png" alt="Logo" width="176"></a></div>
+      <div class="col-md-3 col-sm-4 col-6 text-center"><a class="swap-image mb-grid-gutter" href="#"><img class="swap-to" src="/static/img/demo/event-landing/partners/08_color.png" alt="Logo" width="176"><img class="swap-from" src="/static/img/demo/event-landing/partners/08_gray.png" alt="Logo" width="176"></a></div>
+    </div>
+  </section>
+{% endblock %}
